@@ -12,11 +12,11 @@ class Student:
 class StudentDirectory:
     def __init__(self):
         self._students = {}
- 
+    # add student function
     def add_student(self, student_id, name):
         if student_id not in self._students:
             self._students[student_id] = Student(student_id, name)
- 
+    # search student function
     def search_student(self, query):
         found_students = []
         for student in self._students.values():

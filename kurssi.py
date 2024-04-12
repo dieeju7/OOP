@@ -9,13 +9,13 @@ class Classes():
 
     def __str__(self):
         return f"{self.name}: has join. Here is the student list {self.student_list} "
-    
+    # add student to class function
     def add_student_to_class(self,student: Student):
         self.student_list.append(student)
-    
+    # add course to class function
     def add_course_to_class(self,course: Course):
         self.student_list.append(course)
-
+    # search student from class function
     def search_student(self,name):
         for student in self.student_list:
             if name == student.name():

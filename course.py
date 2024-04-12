@@ -20,11 +20,11 @@ class Course:
 class CourseDirectory:
     def __init__(self):
         self._courses = {}
-
+    # add course function
     def add_course(self, course_id, name, start_time, end_time):
         if course_id not in self._courses:
             self._courses[course_id] = Course(course_id, name, start_time, end_time)
-
+    # search course function
     def search_course(self, query):
         found_courses = []
         for course in self._courses.values():
