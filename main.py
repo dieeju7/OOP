@@ -3,9 +3,10 @@ from course import Course, CourseDirectory
 from kurssi import Classes
 
 def main():
+    # Creating instances of StudentDirectory and CourseDirectory
     studentdirectory = StudentDirectory()
     coursedirectory = CourseDirectory()
-    class_list = []
+    class_list = [] # List to store class objects
 
     while True:
         print("Commands:")
@@ -24,12 +25,14 @@ def main():
             break
  
         elif command == "1":
+            # Adding a new student
             student_id = input("Student ID: ")
             name = input("Name: ")
             studentdirectory.add_student(student_id, name)
             print("Student added.")
  
         elif command == "2":
+            # Searching for a student
             query = input("Enter student ID or name: ")
             result = studentdirectory.search_student(query)
             if result == None:
@@ -38,6 +41,7 @@ def main():
                 print(f'Student {result.name()} has beed added')
 
         elif command == "3":
+            # Adding a new course
             course_id = input("Course ID: ")
             name = input("Name: ")
             start_time = input("Start Time: ")
@@ -46,6 +50,7 @@ def main():
             print("Course added.")
 
         elif command == "4":
+            # Searching for a course
             query = input("Enter course ID or name: ")
             result = coursedirectory.search_course(query)
             if result == None:
@@ -54,6 +59,7 @@ def main():
                 print(f'Course {result.name()} has beed added')
 
         elif command == "5":
+            # Creating a new class
             name = input("Class name: ")
             schedule = input("Schedule: ")
             new_class = Classes(name, schedule)
@@ -61,6 +67,7 @@ def main():
             print("Class created.")
 
         elif command == "6":
+            # Adding a student to a class
             class_name = input("Class name: ")
             student_name = input("Student name: ")
             # check student availble or not
@@ -81,6 +88,7 @@ def main():
                 print("Class not found.")
 
         elif command == "7":
+            # Adding a course to a class
             class_name = input("Class name: ")
             course_name = input("Course name: ")
             for class_obj in class_list:
@@ -96,6 +104,7 @@ def main():
                 print("Class not found.")
 
         elif command == "8":
+            # Searching for a student in a class
             class_name = input("Class name: ")
             student_name = input("Student name: ")
             for class_obj in class_list:
