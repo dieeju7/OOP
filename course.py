@@ -1,15 +1,20 @@
-class Course:
-    def __init__(self, course_id, name, start_time, end_time):
-        self._id = course_id
-        self._name = name
-        self._start_time = start_time
-        self._end_time = end_time
+class DirectoryEntry:
+    def __init__(self, identifier, name):
+        self._id = identifier # Initialize identifier attribute
+        self._name = name # Initialize name attribute
 
     def id(self):
         return self._id
 
     def name(self):
         return self._name
+
+# Class representing a course, inheriting from DirectoryEntry
+class Course(DirectoryEntry):
+    def __init__(self, course_id, name, start_time, end_time):
+        super().__init__(course_id, name) # Call parent class constructor with course_id and name
+        self._start_time = start_time # Initialize start_time attribute
+        self._end_time = end_time  # Initialize end_time attribute
 
     def start_time(self):
         return self._start_time
